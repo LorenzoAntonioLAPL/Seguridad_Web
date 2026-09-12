@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analizador de Cifrados</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <h1>Analizador de Cifrados</h1>
+
+        <p class="descripcion">
+            Sistema de cifrado y análisis automático de César y Atbash.
+        </p>
+
+        <!-- ============================= -->
+        <!-- CONFIGURACIÓN DEL ALFABETO -->
+        <!-- ============================= -->
+
+        <section>
+
+            <label for="alfabeto">
+                Alfabeto o conjunto de caracteres
+            </label>
+
+            <textarea
+                id="alfabeto"
+                rows="3"
+                placeholder="Ejemplo: ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            >ABCDEFGHIJKLMNOPQRSTUVWXYZ</textarea>
+
+            <small>
+                Puedes utilizar letras, números, símbolos, emojis u otros
+                caracteres Unicode.
+            </small>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- CIFRADO -->
+        <!-- ============================= -->
+
+        <section>
+
+            <h2>Cifrar mensaje</h2>
+
+            <label for="mensajeCifrar">
+                Mensaje
+            </label>
+
+            <textarea
+                id="mensajeCifrar"
+                rows="4"
+                placeholder="Escribe el mensaje que deseas cifrar..."
+            ></textarea>
+
+
+            <label for="tipoCifrado">
+                Método de cifrado
+            </label>
+
+            <select id="tipoCifrado">
+
+                <option value="cesar">
+                    César
+                </option>
+
+                <option value="atbash">
+                    Atbash
+                </option>
+
+            </select>
+
+
+            <div id="contenedorDesplazamiento">
+
+                <label for="desplazamiento">
+                    Módulo / desplazamiento
+                </label>
+
+                <input
+                    type="number"
+                    id="desplazamiento"
+                    value="3"
+                    min="1"
+                >
+
+            </div>
+
+
+            <button id="btnCifrar">
+                Cifrar mensaje
+            </button>
+
+
+            <div
+                id="resultadoCifrado"
+                class="resultado"
+            ></div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- DESCIFRADO AUTOMÁTICO -->
+        <!-- ============================= -->
+
+        <section>
+
+            <h2>Descifrado automático</h2>
+
+            <p>
+                El sistema analizará automáticamente el texto para
+                determinar si corresponde a César o Atbash.
+            </p>
+
+            <label for="mensajeDescifrar">
+                Texto cifrado
+            </label>
+
+            <textarea
+                id="mensajeDescifrar"
+                rows="5"
+                placeholder="Escribe aquí el texto cifrado..."
+            ></textarea>
+
+
+            <button id="btnDescifrar">
+                Analizar y descifrar
+            </button>
+
+
+            <div
+                id="resultadoDescifrado"
+                class="resultado"
+            ></div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
